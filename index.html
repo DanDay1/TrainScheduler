@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+<script src="assets/js/app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.7.0/firebase.js"></script>
+
+<head>
+    <title>Boston and Maine RR Schedule</title>
+    <!-- <script src="assets/js/app.js"></script> -->
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div id="logo">
+                <img src="assets/images/bandmlogo.png" alt="Minute Man Logo" id="logo">
+            </div>
+            <div id="title">
+                <h1>Boston and Maine Railroad<h2>
+	<h2>Scheduler<h2>
+	<h3>Boston (North Station)</h3>
+	</div>
+    </header>
+
+    <table style="width:100%">
+  <tr>
+    <th>Train</th>
+    <th>Destination</th> 
+    <th>Frequency</th>
+    <th>Arrival Time</th>
+  </tr>
+   <tr>
+  <td>Cheshire</td>
+  <td>Bellows Falls</td>
+  <td>30 minutes</td>
+  <td>5:00 PM</td>
+  </tr>
+  <tr>
+  <td>Ambassador</td>
+  <td>Montreal</td>
+  <td>15 minutes</td>
+  <td>6:30 PM</td>
+  </tr>
+  <tr>
+    <td>Snow Train</td>
+    <td>North Conway</td>
+    <td>45 minutes</td> 
+    <td>8:00 PM</td>
+  </tr>
+  <tr>
+    <td>Flying Yankee</td>
+    <td>Brunswick</td> 
+    <td>120 minutes</td>
+    <td>9:30 PM</td>
+  </tr>
+
+  </table>
+
+<!--   See train prediction from class yesterday
+ -->
+  <form id="train-form">
+  <p>Add a Train Minute Man</p>
+            <label for="team-input">Name:</label>
+            <input type="text" id="nameInput">
+            <label for="team-input">Destination:</label>
+            <input type="text" id="destinationInput">
+            <label for="team-input">First Train Time:</label>
+            <input type="text" id="firstInput">
+            <label for="team-input">Frequency:</label>
+            <input type="text" id="frequencyInput">
+            <br>
+            <input id="submit" type="submit" value="Add Train">
+        </form>
+        <!-- <div class="button">
+                <button type="button" id="submit" class="btn btn-default btn-lg">Add Train</button>
+            </div> -->
+
+    <!-- <section>
+    	<p>Flying Yankee</p>
+    	
+    </section> -->
+
+</div>
+
+</body>
+
+</html>
