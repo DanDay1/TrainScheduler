@@ -16,7 +16,7 @@ $(document).ready(function() {
 
     $("#submit").on("click", function() {
         console.log("works");
-        event.preventDefault;
+        event.preventDefault();
         var name = $("#nameInput").val().trim();
         console.log(name);
         var destination = $("#destinationInput").val().trim();
@@ -24,7 +24,7 @@ $(document).ready(function() {
         var first = $("#firstInput").val().trim();
         var frequency = $("frequencyInput");
         var minutesAway;
-        var firstTimeConverted = moment(firstTime, "HH:mm").subtract(1, "years");
+        var firstTimeConverted = moment(firstTime, "hh:mm").subtract(1, "years");
         var currentTime = moment();
         var diffTime = moment().diff(moment(firstTimeConverted), "minutes");
         var tRemainder = diffTime % tFrequency;
