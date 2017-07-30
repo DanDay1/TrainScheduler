@@ -24,7 +24,7 @@
 	</div>
     </header>
 
-    <table style="width:100%">
+    <!-- <table style="width:100%">
   <tr>
     <th>Train</th>
     <th>Destination</th> 
@@ -56,13 +56,25 @@
     <td>9:30 PM</td>
   </tr>
 
-  </table>
+  </table> -->
 
 <!--   See train prediction from class yesterday
  -->
+ <!-- <div id="formDiv"> -->
+
+ <table id="timeTable">
+                <tr>
+                    <th class="columnHead">Train</th>
+                    <th class="columnHead">Destination</th>
+                    <th class="columnHead">Frequency (minutes)</th>
+                    <th class="columnHead">Next Arrival</th>
+                    <th class="columnHead">Minutes Away</th>
+                </tr>
+            </table>  
+  
   <form id="train-form">
   <p>Add a Train Minute Man</p>
-            <label for="team-input">Name:</label>
+            <label for="train-input">Name:</label>
             <input type="text" id="nameInput">
             <label for="team-input">Destination:</label>
             <input type="text" id="destinationInput">
@@ -73,6 +85,7 @@
             <br>
             <input id="submit" type="submit" value="Add Train">
         </form>
+        <!-- </div> -->
         <!-- <div class="button">
                 <button type="button" id="submit" class="btn btn-default btn-lg">Add Train</button>
             </div> -->

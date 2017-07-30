@@ -21,9 +21,17 @@ $(document).ready(function() {
         console.log(name);
         var destination = $("#destinationInput").val().trim();
         console.log(destination);
-        var first = $("#firstInput").val().trim(); // convert to military time
+        var first = $("#firstInput").val().trim();
         var frequency = $("frequencyInput");
         var minutesAway;
+        var firstTimeConverted = moment(firstTime, "HH:mm").subtract(1, "years");
+        var currentTime = moment();
+        var diffTime = moment().diff(moment(firstTimeConverted), "minutes");
+        var tRemainder = diffTime % tFrequency;
+        var tMinutesTillTrain = tFrequency - tRemainder;
+        var nextTrain = moment().add(tMinutesTillTrain, "minutes");
+        var nextTrainDisplay = moment(nextTrain).format('HH:mm');
+
 
         database.ref().push({
             dataName: name,
@@ -34,7 +42,32 @@ $(document).ready(function() {
             dataDateAdded: firebase.database.ServerValue.TIMESTAMP
         });
 
-        console.log("branch one");
+        database.ref().on("child_added", function(childSnapshot) {
+
+        //  $("#timeTable").append(
+       
+        // "<tr><td>" + childSnapshot.val().dataName + "</td>" + 
+        // "<td>" + childSnapshot.val().dataDestination + "</td>" + 
+        // "<td>" + childSnapshot.val().dataFirst + "</td>" + 
+        // "<td>" + childSnapshot.val().dataFrequency + "</td>" + 
+        // "<td>" + childSnapshot.val().dataMinutesAway + "</td></tr>"); 
+
+         $("#timeTable").append(
+       
+        "<tr><td>" + "Down Easter" + "</td>" + 
+        "<td>" + "Brunswick" + "</td>" + 
+        "<td>" + "0900" + "</td>" + 
+        "<td>" + 10 + "</td>" + 
+        "<td>" + 5 + "</td></tr>"); 
+      // "</tr>");
+
+    }, function(errorObject) {
+      console.log("Errors handled: " + errorObject.code);
+    });
+
+
+    
+     
 
     });
 });

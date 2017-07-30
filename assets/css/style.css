@@ -15,7 +15,8 @@ body {
 
 
  h1 {
- 	/*padding-top: 20px;*/
+ 	padding-top: 20px;
+  font-weight: bold;
  	font-size: 48px;
  	color: #670E2C;
 
@@ -24,12 +25,13 @@ body {
 
  h2 {
 	font-size: 36px;
+  padding-top: 15px;
 	/*color: #1F6AEE;*/
 /*	color: #044BC7;*/
  }
 
   h3 {
-/*  	padding-top: 20px;*/
+  	padding-top: 20px;
 	font-size: 36px;
 	/*color: #1F6AEE;*/
 /*	color: #044BC7;
@@ -52,7 +54,18 @@ body {
   float: left;
  }
 
+ #table {
+  clear: both;
+  padding-top: 25px;
+  width: 100%;
+ }
+
+/* #tableDiv {
+  padding-top: 25px;
+ }*/
+
  #train-form {
+  clear: both;
   padding-top: 20px;
  }
 
