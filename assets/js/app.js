@@ -23,43 +23,49 @@ $(document).ready(function() {
         console.log(destination);
         var first = $("#firstInput").val().trim();
         var frequency = $("frequencyInput");
-        var minutesAway;
-        var firstTimeConverted = moment(firstTime, "hh:mm").subtract(1, "years");
+        var minutesAway = 10;
+        var firstTimeConverted = moment(first, "hh:mm").subtract(1, "years");
         var currentTime = moment();
         var diffTime = moment().diff(moment(firstTimeConverted), "minutes");
         var tRemainder = diffTime % tFrequency;
         var tMinutesTillTrain = tFrequency - tRemainder;
         var nextTrain = moment().add(tMinutesTillTrain, "minutes");
-        var nextTrainDisplay = moment(nextTrain).format('HH:mm');
+        var nextTrainDisplay = moment(nextTrain).format('hh:mm');
 
-
+$("#timeTable").append(
+       
+//         "<tr><td>" + name + "</td>" + 
+//         "<td>" + destination + "</td>" + 
+//         "<td>" + frequency + "</td>" + 
+//         "<td>" + first + "</td>" + 
+//         "<td>" + 5 + "</td></tr>");  
         database.ref().push({
             dataName: name,
             dataDestination: destination,
             dataFirst: first,
             dataFrequency: frequency,
-            dataMinutesAway: minutesAway,
-            dataDateAdded: firebase.database.ServerValue.TIMESTAMP
-        });
+            dataMinutesAway: minutesAway
+            // dataDateAdded: firebase.database.ServerValue.TIMESTAMP
+        }));
 
         database.ref().on("child_added", function(childSnapshot) {
 
-        //  $("#timeTable").append(
-       
-        // "<tr><td>" + childSnapshot.val().dataName + "</td>" + 
-        // "<td>" + childSnapshot.val().dataDestination + "</td>" + 
-        // "<td>" + childSnapshot.val().dataFirst + "</td>" + 
-        // "<td>" + childSnapshot.val().dataFrequency + "</td>" + 
-        // "<td>" + childSnapshot.val().dataMinutesAway + "</td></tr>"); 
-
          $("#timeTable").append(
        
-        "<tr><td>" + "Down Easter" + "</td>" + 
-        "<td>" + "Brunswick" + "</td>" + 
-        "<td>" + "0900" + "</td>" + 
-        "<td>" + 10 + "</td>" + 
-        "<td>" + 5 + "</td></tr>"); 
-      // "</tr>");
+        "<tr><td>" + childSnapshot.val().dataName + "</td>" + 
+        "<td>" + childSnapshot.val().dataDestination + "</td>" + 
+        "<td>" + childSnapshot.val().dataFirst + "</td>" + 
+        "<td>" + childSnapshot.val().dataFrequency + "</td>" + 
+        "<td>" + childSnapshot.val().dataMinutesAway + "</td></tr>"); 
+
+         // $("#timeTable").append(
+       
+        // "<tr><td>" + "Down Easter" + "</td>" + 
+        // "<td>" + "Brunswick" + "</td>" + 
+        // "<td>" + "0900" + "</td>" + 
+        // "<td>" + 10 + "</td>" + 
+        // "<td>" + 5 + "</td></tr>"); 
+      
 
     }, function(errorObject) {
       console.log("Errors handled: " + errorObject.code);
