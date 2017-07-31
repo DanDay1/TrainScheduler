@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    // var firebase;
+  
     var config = {
         apiKey: "AIzaSyCnLh6N-vYGDhbOOhJ54XER9DjJaRBbStg",
         authDomain: "train-45750.firebaseapp.com",
@@ -37,31 +37,32 @@ $(document).ready(function() {
             dataName: name,
             dataDestination: destination,
             dataFirst: first,
-            dataFrequency: frequency
-            // dataMinutesAway: minutesAway
-        }); 
-       
+            dataFrequency: frequency,
+            dataMinutesAway: minutesAway,
+            dataNextTrain: nextTrainDisplay
+        });
+
 
         database.ref().on("child_added", function(childSnapshot) {
 
-         $("#timeTable").append(
-       
-        "<tr><td>" + childSnapshot.val().dataName + "</td>" + 
-        "<td>" + childSnapshot.val().dataDestination + "</td>" +  
-        "<td>" + childSnapshot.val().dataFrequency + "</td>" + 
-        "<td>" + nextTrainDisplay + "</td>" +
-        "<td>" + dataMinutesAwaytam + "</td></tr>"); 
+            $("#timeTable").append(
 
-       
-      
-
-    }, function(errorObject) {
-      console.log("Errors handled: " + errorObject.code);
-    });
+                "<tr><td>" + childSnapshot.val().dataName + "</td>" +
+                "<td>" + childSnapshot.val().dataDestination + "</td>" +
+                "<td>" + childSnapshot.val().dataFrequency + "</td>" +
+                "<td>" + childSnapshot.val().dataNextTrain + "</td>" +
+                "<td>" + childSnapshot.val().dataMinutesAway + "</td></tr>");
 
 
-    
-     
+
+
+        }, function(errorObject) {
+            console.log("Errors handled: " + errorObject.code);
+        });
+
+
+
+
 
     });
 });
