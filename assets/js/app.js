@@ -23,21 +23,22 @@ $(document).ready(function() {
         console.log(destination);
         var first = $("#firstInput").val().trim();
         var frequency = $("frequencyInput");
-        var minutesAway = 10;
+
+        var minutesAway;
         var firstTimeConverted = moment(first, "hh:mm").subtract(1, "years");
         var currentTime = moment();
         var diffTime = moment().diff(moment(firstTimeConverted), "minutes");
-        var tRemainder = diffTime % frequency;
-        var tMinutesTillTrain = frequency - tRemainder;
-        var nextTrain = moment().add(tMinutesTillTrain, "minutes");
+        var remainder = diffTime % frequency;
+        var dataMinutesAway = frequency - remainder;
+        var nextTrain = moment().add(dataMinutesAway, "minutes");
         var nextTrainDisplay = moment(nextTrain).format('hh:mm');
 
         database.ref().push({
             dataName: name,
             dataDestination: destination,
             dataFirst: first,
-            dataFrequency: frequency,
-            dataMinutesAway: minutesAway
+            dataFrequency: frequency
+            // dataMinutesAway: minutesAway
         }); 
        
 
@@ -46,10 +47,10 @@ $(document).ready(function() {
          $("#timeTable").append(
        
         "<tr><td>" + childSnapshot.val().dataName + "</td>" + 
-        "<td>" + childSnapshot.val().dataDestination + "</td>" + 
-        "<td>" + childSnapshot.val().dataFirst + "</td>" + 
+        "<td>" + childSnapshot.val().dataDestination + "</td>" +  
         "<td>" + childSnapshot.val().dataFrequency + "</td>" + 
-        "<td>" + childSnapshot.val().dataMinutesAway + "</td></tr>"); 
+        "<td>" + nextTrainDisplay + "</td>" +
+        "<td>" + dataMinutesAwaytam + "</td></tr>"); 
 
        
       
