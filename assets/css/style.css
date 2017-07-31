@@ -10,7 +10,6 @@ body {
   max-width: 960px;
   margin: 0 auto;
   clear: both;
- 
  }
 
 
@@ -18,24 +17,19 @@ body {
  	padding-top: 20px;
   font-weight: bold;
  	font-size: 48px;
- 	color: #670E2C;
-
- 	
+ 	color: #670E2C;	
  }
 
  h2 {
 	font-size: 36px;
   padding-top: 15px;
-	/*color: #1F6AEE;*/
-/*	color: #044BC7;*/
+
  }
 
   h3 {
   	padding-top: 20px;
 	font-size: 36px;
-	/*color: #1F6AEE;*/
-/*	color: #044BC7;
-*/ }
+ }
 
 
 
@@ -61,22 +55,13 @@ body {
   width: 100%;
  }
 
-/* #tableDiv {
-  padding-top: 25px;
- }*/
 
  #train-form {
   clear: both;
   padding-top: 20px;
  }
 
- #intro {
- 	font-size: 24px;
- 	font-weight: bold;
- 	color: #D60C0C;
- 	line-height: 36px;
- 	font-family: helvetica, arial, "New Rail Alphabet", "Galaxie Polaris";
- }
+
 
  .btn-default {
   padding: 15px;
@@ -86,27 +71,4 @@ body {
   font-family: helvetica, arial, "New Rail Alphabet", "Galaxie Polaris";
   font-size: 18px;
   background-color: #ccc;
-  
-
 }
-
-#start {
-	width: 100px;
-}
-
- #countDownCLock {
- 	font-size: 18px;
- 	font-family: helvetica, arial, "New Rail Alphabet", "Galaxie Polaris";
- 	color: #044BC7
- }
-
-/* .option {
-  padding-top: 7px;
-  height: 45px;
-  color: black;
-  padding-left: 14px;
-  background-color: white;
-  border-radius: 4px;
-}*/
-
- }
