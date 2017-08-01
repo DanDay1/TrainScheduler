@@ -39,7 +39,7 @@ $(document).ready(function() {
             dataFirst: first,
             dataFrequency: frequency,
             dataMinutesAway: minutesAway,
-            dataNextTrain: nextTrainDisplay
+            dataNextTrain: nextTrainDisplay,
             dateAdded: firebase.database.ServerValue.TIMESTAMP
         });
 
